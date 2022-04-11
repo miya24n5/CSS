@@ -40,7 +40,7 @@ body {
 }
 
 .card:hover .imgBx img {
-  transform: rotate(-35deg);
+  transform: rotate(-35deg) translateX(-20px);
 }
 
 .card .details {
@@ -48,4 +48,43 @@ body {
   width: 300px;
   height: 100%;
   background: #4ba9e9;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 20px;
+  flex-direction: column;
+}
+
+.card .details::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #fff;
+}
+
+.card .details h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+.card .details h3 span {
+  font-size: 0.65em;
+  font-weight: 300;
+  text-transform: none;
+  opacity: 0.85;
+}
+
+.card .details h4 {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-top: 20px;
 }
