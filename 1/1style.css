@@ -1,4 +1,4 @@
-@iport url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
 * {
   margin: 0;
@@ -17,11 +17,16 @@ body {
 
 .card {
   position: relative;
-  width: 600px;
+  width: 300px;
   height: 380px;
   background: #000;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
   display: flex;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.card:hover {
+  width: 600px;
 }
 
 .card .imgBx {
@@ -32,6 +37,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  z-index: 2;
 }
 
 .card .imgBx img {
@@ -44,8 +51,9 @@ body {
 }
 
 .card .details {
-  position: relative;
-  width: 300px;
+  position: absolute;
+  left: 0;
+  min-width: 300px;
   height: 100%;
   background: #4ba9e9;
   display: flex;
@@ -53,6 +61,12 @@ body {
   /* align-items: center; */
   padding: 20px;
   flex-direction: column;
+  z-index: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.card:hover .details {
+  left: 300px;
 }
 
 .card .details::before {
@@ -87,4 +101,71 @@ body {
   font-weight: 600;
   font-size: 0.9em;
   margin-top: 20px;
+  margin-bottom: 10px;
+  line-height: 1em;
+}
+
+.card .details p {
+  color: #fff;
+  opacity: 0.85;
+  font-size: 0.8em;
+}
+
+.card .details .size {
+  display: flex;
+  gap: 10px;
+}
+
+.card .details .size li {
+  list-style: none;
+  color: #fff;
+  font-size: 0.9em;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.card .details .size li:hover {
+  color: #4ba9e9;
+  background: #fff;
+  opacity: 1;
+}
+
+.card .details .group {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card .details .group h2 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.card .details .group h2 sup {
+  font-weight: 300;
+}
+
+.card .details .group h2 small {
+  font-size: 0.75em;
+}
+
+.card .details .group a {
+  display: inline-flex;
+  padding: 10px 25px;
+  background: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #4ba9e9;
 }
